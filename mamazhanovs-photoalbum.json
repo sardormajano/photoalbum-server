@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "poised-vial-255812",
+  "private_key_id": "cc580e256ac019103c909a9e10e2d4e333b34b10",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCug/NlCdqQaUCY\nZlZHS3Nrd78Im14jzDPXA0/LPiCcRvz7CB5QJISm2TQ3GqQ0S5T9EFT31UmaXADy\n0yfn1yaibCy5M0l8mZJQEUZoN9gX+Ku/2R8MjLzSq6IBmV/2hohI4FEcQv1wCpyk\noe0zADrBA5Fd8HuOCMr6/FAR1MzcOQLEUgJMqfvMqLlT+2JyV9TMJFVS0ykP5Brg\nWRUIqsvAabI7qxN8uxjgt04eEH0aB0jsFJf6XIbS26CdnvGL1NNZeqQDCtB4D7dA\ntrhfZnLpXk/d0lwvyr8w/Tk66AsG/WT2+vJ6S4SuLQy9ZmLS0CyEB3Hlm9LVg+O9\ntJw9c71xAgMBAAECggEAAzfSrqvKWHxgYQ8OCz2EcNhh8O4wg7d5wz6/428PWeJj\nOtvQ90hdG9iIgnWezooQQsRg1LsdoteMeu3S4A8TGs6k2ntsIPyR+qD+6+APv41p\n2V1PGcOknbvlfmMOJnUfoTxlsoA3vS+s6MpFnfmkm7eNoC5VkO5vk8ZAUbvbVTo+\nGPlnP4/jxdPW6BBzOCFlEcPnxlQRGvF5wZZrW4A+V62lczciqXzGsPY8W/RsodUB\nymWJ0Nzx6Cw7q+rISRsyWn/C6jKZwv1d2P1QizByOb/E51aDvCOP6sRE2zMkmY+K\nlowYZtIB2iP1CQzrDznSqzxxD45t8TdORPJvikrJGwKBgQDevxNR7Dmd1DB4lBfB\no+XIv0vpQidoxo1vfEx+mdBYy/eUgW2KgP89A8kFzbxROwqjgtUPox7nA1RiFWDC\nS2msp8pfB2W7G+tZxnGix+fawwqSQZEZg+wbqAoqYjlOIoQAJ9K+c/9epzBZIngU\njZ0avwQQnQuZiePCZWhh0A+hCwKBgQDIkZV+SRurPlnOKxti1AjvhlY+DEGH79Jx\njAxjL7Srh+JBIgU2qQa0MymHFPSdyGWwcmSqCwgUSzWCf6xmkEiGZqzl/BC0AOu7\n/E0FYsARmDA57v4zLNAdzHwWeqEC3C7MDxd6sFAH6m4Z0BxbKV5OPEBuT8SL/D3X\nyQ4p9kWg8wKBgAy5ncDwXdpGZP5+d1z4oAf35b5NqTKzJSFZWIVjBCQOgvZY7okb\nFXnG3ZUXS8rYNKNitglOqFVKO2ffEMgIxuC2NTl4krc9wRQ/4f4KrZQx0EjKth9f\nCf4Ke4owUlXEYwYfQErhFZWyt3BgJ7wE2xTMFM9eKWt8FSbl5DCyUjJBAoGAfL0G\nY4cmXScnBTEMFDfY4tcClg5bRybhE9tM7PcDf1bAYU++PFN9Jt9W6Xsf821pyQYs\nExFPUgfAXMv4tcTwRh5fU52j6b9U3RI5+KqE16x1+eHoWH17Zb0CQ5y6vKOhuyl7\nqcMz0uh61zT2HcAptbCFRdX4YDNdZvHVDEXs4f8CgYBl7m14BrEKBRoxUpoFWMS8\nKr7xbg1huCr7r7y3gx8CdnKZ1m0Al6ehMhl4Sat0PpqhWv3OrBgRbcz7QXYpo56U\nGh5v97oblwALPbncLghjBkyH4KSE+qXD2eYCsIokD1WzemMuqok+MDNqjjn4IL08\n2vWPIjk+K3anUegBuFiLxg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "mamazhanovs-photoalbum@poised-vial-255812.iam.gserviceaccount.com",
+  "client_id": "108462057481828256545",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/mamazhanovs-photoalbum%40poised-vial-255812.iam.gserviceaccount.com"
+}

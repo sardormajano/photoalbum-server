@@ -1,0 +1,21 @@
+{
+  "name": "express-practice-i",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Sardor",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^3.3.1",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "chalk": "^2.4.2",
+    "config": "^3.2.3",
+    "express": "^4.17.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.5",
+    "multer": "^1.4.2"
+  }
+}
