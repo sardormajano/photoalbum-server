@@ -1,6 +1,6 @@
 'use strict';
 
-const buckets = require('../constants/buckets');
+const { buckets } = require('../constants');
 const { Storage } = require('@google-cloud/storage');
 const storage = new Storage();
 
