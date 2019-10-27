@@ -1,7 +1,6 @@
 const config = require('config');
-const jwt = require('jsonwebtoken');
-const Joi = require('joi');
 const mongoose = require('mongoose');
+const { auth } = require('../middleware');
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -23,20 +22,13 @@ const UserSchema = new mongoose.Schema({
     minlength: 3,
     maxlength: 255
   },
+  createdAt: Number,
+  updatedAt: Number,
   isAdmin: Boolean
 });
 
-UserSchema.methods.generateAuthToken = function => {
-  const token = jwt.sign({ _id: this._id, isAdmin: this.isAdmin }, config.get('myprivatekey'));
-  return token;
-}
+UserSchema.pre('save', auth.preSave);
 
-function validateUser(user) {
-  const schema = {
-    name: Joi.string().min(3).max(50).required(),
-    email: Joi.string().min(5).max(255).required().email(),
-    password: Joi.string().min(3).max(255).required()
-  }
-
-  return Joi.validate(user, schema);
-}
+module.exports = {
+  UserSchema
+};
