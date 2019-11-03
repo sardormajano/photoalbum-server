@@ -1,4 +1,4 @@
 module.exports = {
-  users: require('./users.service'),
-  gcloud: require('./gcloud.service')
+  gcloud: require('./gcloud.service'),
+  files: require('./file.service')
 };

@@ -22,7 +22,7 @@ module.exports = {
   },
 
   async uploadFile(filename, bucketName = buckets.DEFAULT_BUCKET) {
-    await storage.bucket(bucketName).upload(filename, {
+    return storage.bucket(bucketName).upload(filename, {
       gzip: true,
       metadata: {
         cacheControl: 'public, max-age=31536000'
