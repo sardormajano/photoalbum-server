@@ -25,35 +25,38 @@ router.post(
   upload.array('images[]'),
   async (req, res) => {
     try {
-      responseImages = await gcloudService.uploadFiles(
-        req.files.map(file => file.path)
-      );
-
+      const filePaths = req.files.map(file => file.path);
+      await fileService.createThumbnails(filePaths);
       fileService.updateFilesWithOriginalMetadata(req);
 
+      responseImages = await gcloudService.uploadFiles(filePaths);
       responseImages.forEach(responseImg => {
         const [file] = responseImg;
         const { size, name, bucket, mediaLink } = file.metadata;
-        const {
-          originalLastModified: imageCreatedAt,
-          originalTags: tags
-        } = req.files.find(mFile => mFile.filename === name);
+        const multerFile = req.files.find(mFile => mFile.filename === name);
 
-        const image = new Image({
-          size,
-          name,
-          bucket,
-          mediaLink,
-          imageCreatedAt,
-          tags
-        });
-        image.save();
+        if (multerFile) {
+          const {
+            originalLastModified: imageCreatedAt,
+            originalTags: tags
+          } = multerFile;
+
+          const image = new Image({
+            size,
+            name,
+            bucket,
+            mediaLink,
+            imageCreatedAt,
+            tags
+          });
+          image.save();
+        }
       });
 
-      fileService.cleanUp(req.files);
-
+      fileService.cleanUp(filePaths);
       res.sendStatus(status.OK);
     } catch (err) {
+      res.statusMessage = err;
       res.sendStatus(status.INTERNAL_ERROR);
     }
   }
