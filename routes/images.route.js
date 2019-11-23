@@ -15,10 +15,6 @@ const multer = require('multer');
 const upload = multer({ dest: 'images[]/' });
 const Image = mongoose.model('Image', image.ImageSchema);
 
-router.get('', auth.verifyToken, (req, res) => {
-  res.send('this is images ROOT');
-});
-
 router.post(
   '/upload',
   auth.verifyToken,
@@ -61,5 +57,30 @@ router.post(
     }
   }
 );
+
+router.get('', auth.verifyToken, (req, res) => {
+  const { tags, periodStart, periodEnd } = req.query;
+
+  if (!tags && !periodStart && !periodEnd) {
+    res.send([]);
+  } else {
+    const tagsRegExp = new RegExp(tags, 'i');
+
+    Image.find(
+      {
+        tags: tags && tagsRegExp,
+        imageCreatedAt: periodEnd &&
+          periodStart && { $gt: periodStart, $lt: periodEnd }
+      },
+      (err, images) => {
+        if (err) {
+          res.sendStatus(status.INTERNAL_ERROR);
+        } else {
+          res.send(images);
+        }
+      }
+    );
+  }
+});
 
 module.exports = router;
