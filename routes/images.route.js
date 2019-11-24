@@ -64,22 +64,21 @@ router.get('', auth.verifyToken, (req, res) => {
   if (!tags && !periodStart && !periodEnd) {
     res.send([]);
   } else {
-    const tagsRegExp = new RegExp(tags, 'i');
+    const searchQuery = {};
+    if (periodStart && periodEnd) {
+      searchQuery.imageCreatedAt = { $gt: periodStart, $lt: periodEnd };
+    }
+    if (tags) {
+      searchQuery.tags = { $in: tags };
+    }
 
-    Image.find(
-      {
-        tags: tags && tagsRegExp,
-        imageCreatedAt: periodEnd &&
-          periodStart && { $gt: periodStart, $lt: periodEnd }
-      },
-      (err, images) => {
-        if (err) {
-          res.sendStatus(status.INTERNAL_ERROR);
-        } else {
-          res.send(images);
-        }
+    Image.find(searchQuery, (err, images) => {
+      if (err) {
+        res.sendStatus(status.INTERNAL_ERROR);
+      } else {
+        res.send(images);
       }
-    );
+    });
   }
 });
 

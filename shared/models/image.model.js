@@ -20,9 +20,11 @@ const ImageSchema = new mongoose.Schema({
     minlength: 3,
     maxlength: 150
   },
-  tags: {
-    type: String
-  },
+  tags: [
+    {
+      type: String
+    }
+  ],
   mediaLink: {
     type: String,
     required: true,
